@@ -24,16 +24,14 @@ function tellMe(joke) {
 // Get jokes from Joke API
 async function getJokes() {
   let joke = '';
-  const apiUrl = 'https://sv443.net/jokeapi/v2/joke/Programming?blacklistFlags=nsfw,racist,sexist';
+  const apiUrl = "https://api.chucknorris.io/jokes/random";
   try {
     const response = await fetch(apiUrl);
     const data = await response.json();
     // Assign One or Two Part Joke
-    if (data.setup) {
-      joke = `${data.setup} ... ${data.delivery}`;
-    } else {
-      joke = data.joke;
-    }
+    if (data.value) {
+      joke = `fuck ... ${data.value}`;
+    } 
     // Passing Joke to VoiceRSS API
     tellMe(joke);
     // Disable Button
