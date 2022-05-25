@@ -30,7 +30,7 @@ async function getJokes() {
     const data = await response.json();
     // Assign One or Two Part Joke
     if (data.value) {
-      joke = `fuck ... ${data.value}`;
+      joke = data.value;
     } 
     // Passing Joke to VoiceRSS API
     tellMe(joke);
